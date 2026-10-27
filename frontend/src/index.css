@@ -1,0 +1,362 @@
+@import "tailwindcss";
+
+/* ── Tema oscuro (por defecto) ─────────────────────────── */
+:root,
+[data-theme="dark"] {
+  --color-border:               hsl(0 0% 16%);
+  --color-background:           hsl(220 15% 5%);
+  --color-foreground:           hsl(0 0% 95%);
+  --color-card:                 hsl(220 12% 8%);
+  --color-card-foreground:      hsl(0 0% 95%);
+  --color-primary:              hsl(158 100% 45%);
+  --color-primary-foreground:   hsl(220 15% 5%);
+  --color-secondary:            hsl(220 10% 13%);
+  --color-secondary-foreground: hsl(0 0% 75%);
+  --color-muted:                hsl(220 10% 13%);
+  --color-muted-foreground:     hsl(0 0% 45%);
+  --color-accent:               hsl(158 100% 45%);
+  --color-accent-foreground:    hsl(220 15% 5%);
+  --color-destructive:          hsl(0 72% 51%);
+  --color-destructive-foreground: hsl(0 0% 98%);
+  --color-input:                hsl(220 10% 13%);
+  --color-ring:                 hsl(158 100% 45%);
+
+  /* Superficies */
+  --surface-1: rgba(255,255,255,0.03);
+  --surface-2: rgba(255,255,255,0.06);
+  --surface-3: rgba(255,255,255,0.08);
+  --border-subtle: rgba(255,255,255,0.07);
+  --border-medium: rgba(255,255,255,0.12);
+  --text-muted: #555;
+  --text-secondary: #888;
+
+  /* Profundidad */
+  --shadow-card: 0 1px 0 0 rgba(255,255,255,0.04) inset, 0 8px 24px -12px rgba(0,0,0,0.6);
+  --shadow-card-hover: 0 1px 0 0 rgba(255,255,255,0.06) inset, 0 18px 40px -18px rgba(0,0,0,0.8), 0 0 0 1px color-mix(in srgb, var(--color-primary) 18%, transparent);
+  --ambient-1: hsl(158 100% 45% / 0.10);
+  --ambient-2: hsl(185 100% 40% / 0.06);
+  --grid-line: rgba(255,255,255,0.022);
+}
+
+/* ── Tema claro ─────────────────────────────────────────── */
+[data-theme="light"] {
+  --color-border:               hsl(220 13% 85%);
+  --color-background:           hsl(220 20% 97%);
+  --color-foreground:           hsl(220 20% 10%);
+  --color-card:                 hsl(0 0% 100%);
+  --color-card-foreground:      hsl(220 20% 10%);
+  --color-primary:              hsl(158 70% 35%);
+  --color-primary-foreground:   hsl(0 0% 100%);
+  --color-secondary:            hsl(220 14% 92%);
+  --color-secondary-foreground: hsl(220 20% 30%);
+  --color-muted:                hsl(220 14% 92%);
+  --color-muted-foreground:     hsl(220 10% 50%);
+  --color-accent:               hsl(158 70% 35%);
+  --color-accent-foreground:    hsl(0 0% 100%);
+  --color-destructive:          hsl(0 72% 45%);
+  --color-destructive-foreground: hsl(0 0% 98%);
+  --color-input:                hsl(220 14% 92%);
+  --color-ring:                 hsl(158 70% 35%);
+
+  /* Superficies */
+  --surface-1: rgba(0,0,0,0.03);
+  --surface-2: rgba(0,0,0,0.05);
+  --surface-3: rgba(0,0,0,0.08);
+  --border-subtle: rgba(0,0,0,0.08);
+  --border-medium: rgba(0,0,0,0.14);
+  --text-muted: #9ca3af;
+  --text-secondary: #6b7280;
+
+  /* Profundidad */
+  --shadow-card: 0 1px 2px rgba(16,24,40,0.04), 0 8px 24px -14px rgba(16,24,40,0.18);
+  --shadow-card-hover: 0 2px 4px rgba(16,24,40,0.05), 0 20px 40px -18px rgba(16,24,40,0.28), 0 0 0 1px color-mix(in srgb, var(--color-primary) 22%, transparent);
+  --ambient-1: hsl(158 70% 40% / 0.10);
+  --ambient-2: hsl(185 70% 45% / 0.07);
+  --grid-line: rgba(0,0,0,0.022);
+}
+
+@theme inline {
+  --color-border:               var(--color-border);
+  --color-background:           var(--color-background);
+  --color-foreground:           var(--color-foreground);
+  --color-card:                 var(--color-card);
+  --color-card-foreground:      var(--color-card-foreground);
+  --color-primary:              var(--color-primary);
+  --color-primary-foreground:   var(--color-primary-foreground);
+  --color-secondary:            var(--color-secondary);
+  --color-secondary-foreground: var(--color-secondary-foreground);
+  --color-muted:                var(--color-muted);
+  --color-muted-foreground:     var(--color-muted-foreground);
+  --color-accent:               var(--color-accent);
+  --color-accent-foreground:    var(--color-accent-foreground);
+  --color-destructive:          var(--color-destructive);
+  --color-destructive-foreground: var(--color-destructive-foreground);
+  --color-input:                var(--color-input);
+  --color-ring:                 var(--color-ring);
+  --radius-lg: 1rem;
+  --radius-md: 0.75rem;
+  --radius-sm: 0.5rem;
+}
+
+@layer base {
+  *, *::before, *::after {
+    border-color: var(--color-border);
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+    font-feature-settings: 'cv11', 'ss01';
+    -webkit-font-smoothing: antialiased;
+    font-synthesis: none; /* Bebas solo tiene un peso: sin esto el navegador inventa un negrito feo */
+    transition: background-color 250ms ease, color 250ms ease;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bebas Neue', 'Inter Variable', system-ui, sans-serif;
+    font-weight: 400; /* Bebas solo tiene un peso: evita el "falso negrito" */
+    letter-spacing: 0.03em;
+  }
+
+  /* Títulos chicos (nombres de tarjetas, etc.) se quedan en Inter: Bebas en tamaño chico no se lee */
+  :is(h1, h2, h3, h4, h5, h6):is(.text-xs, .text-sm, .text-base) {
+    font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+    letter-spacing: normal;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-primary) 30%, transparent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .grad-primary {
+    background: linear-gradient(135deg, var(--color-primary), hsl(180 100% 38%));
+  }
+  .grad-fire {
+    background: linear-gradient(135deg, hsl(20 100% 55%), hsl(40 100% 50%));
+  }
+  .grad-dark {
+    background: linear-gradient(135deg, var(--color-secondary), var(--color-card));
+  }
+
+  .glow {
+    box-shadow: 0 0 24px color-mix(in srgb, var(--color-primary) 30%, transparent),
+                0 4px 16px color-mix(in srgb, var(--color-primary) 15%, transparent);
+  }
+  .glow-sm {
+    box-shadow: 0 0 12px color-mix(in srgb, var(--color-primary) 20%, transparent);
+  }
+  .glow-fire {
+    box-shadow: 0 0 24px hsl(20 100% 55% / 0.30);
+  }
+
+  .border-glow {
+    border-color: color-mix(in srgb, var(--color-primary) 40%, transparent);
+  }
+
+  .card-texture {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  }
+
+  .diagonal-lines {
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      color-mix(in srgb, var(--color-primary) 3%, transparent) 10px,
+      color-mix(in srgb, var(--color-primary) 3%, transparent) 11px
+    );
+  }
+
+  /* ── Nuevas utilidades de diseño ── */
+  .font-display {
+    font-family: 'Bebas Neue', 'Inter Variable', system-ui, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+  }
+  .tabular { font-variant-numeric: tabular-nums; }
+
+  .text-gradient {
+    background: linear-gradient(120deg, var(--color-primary) 0%, hsl(180 100% 45%) 60%, var(--color-primary) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Fondo ambiental (manchas de luz + cuadrícula muy sutil) */
+  .app-ambient {
+    background-image:
+      radial-gradient(60rem 40rem at 0% -10%, var(--ambient-1), transparent 60%),
+      radial-gradient(50rem 35rem at 110% 110%, var(--ambient-2), transparent 60%),
+      linear-gradient(var(--grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: auto, auto, 48px 48px, 48px 48px;
+    background-attachment: fixed;
+  }
+
+  .shadow-card       { box-shadow: var(--shadow-card); }
+  .shadow-card-hover { box-shadow: var(--shadow-card-hover); }
+
+  .hover-lift {
+    transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 200ms ease, border-color 200ms ease;
+  }
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  /* Vidrio (para barras flotantes) */
+  .glass {
+    background: color-mix(in srgb, var(--color-card) 78%, transparent);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+  }
+
+  /* Brillo que cruza el botón al pasar el mouse */
+  .btn-shine { position: relative; overflow: hidden; isolation: isolate; }
+  .btn-shine::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,0.35) 50%, transparent 70%);
+    transform: translateX(-120%);
+    transition: transform 700ms ease;
+    z-index: -1;
+  }
+  .btn-shine:hover::after { transform: translateX(120%); }
+
+  /* Logo del león: se pinta con el degradado de marca usando máscara */
+  .brand-mark {
+    -webkit-mask: var(--mark) center / contain no-repeat;
+    mask: var(--mark) center / contain no-repeat;
+  }
+
+  /* Clases de superficie — úsalas en lugar de bg-white/3 etc. */
+  .surface-1 { background: var(--surface-1); }
+  .surface-2 { background: var(--surface-2); }
+  .surface-3 { background: var(--surface-3); }
+  .border-subtle { border-color: var(--border-subtle); }
+  .border-medium { border-color: var(--border-medium); }
+
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--color-muted); border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: color-mix(in srgb, var(--color-primary) 50%, transparent); }
+}
+
+/* ── Keyframes ─────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes pulseGlow {
+  0%, 100% { opacity: .5; transform: scale(1); }
+  50%       { opacity: 1; transform: scale(1.06); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes progressFill {
+  from { width: 0%; }
+  to   { width: var(--target-width, 100%); }
+}
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(8px) scale(0.95); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes borderPulse {
+  0%, 100% { border-color: color-mix(in srgb, var(--color-primary) 20%, transparent); }
+  50%       { border-color: color-mix(in srgb, var(--color-primary) 60%, transparent); }
+}
+
+.animate-fade-up      { animation: fadeUp      0.5s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.animate-fade-in      { animation: fadeIn      0.4s ease both; }
+.animate-slide-left   { animation: slideInLeft 0.4s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.animate-pulse-glow   { animation: pulseGlow   3s ease-in-out infinite; }
+.animate-border-pulse { animation: borderPulse 2s ease-in-out infinite; }
+.animate-count-up     { animation: countUp     0.6s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+
+.animate-shimmer-text { animation: shimmer 6s linear infinite; }
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+.animate-float { animation: floatY 6s ease-in-out infinite; }
+
+@keyframes ringFill {
+  from { stroke-dashoffset: var(--ring-len); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── Carrusel ─────────────────────────────────────────── */
+@keyframes carouselProgress {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+
+/* Línea de electrocardiograma */
+@keyframes ecgDraw {
+  from { stroke-dashoffset: 600; }
+  to   { stroke-dashoffset: 0; }
+}
+.animate-ecg {
+  stroke-dasharray: 600;
+  animation: ecgDraw 2.4s linear infinite;
+}
+
+/* Agua (ola) */
+@keyframes waveX {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-wave { animation: waveX 4s linear infinite; }
+
+@keyframes heartBeat {
+  0%, 100% { transform: scale(1); }
+  15%      { transform: scale(1.12); }
+  30%      { transform: scale(1); }
+  45%      { transform: scale(1.08); }
+}
+.animate-heartbeat { animation: heartBeat 1.6s ease-in-out infinite; }
+
+/* ── Accesibilidad: foco visible con teclado y menos animación si el usuario lo pide ── */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-primary, #00e5ff) !important;
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

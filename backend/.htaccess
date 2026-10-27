@@ -1,0 +1,48 @@
+# ============================================================
+#  backend/.htaccess
+#  Combinado: utils + Configuracion
+# ============================================================
+
+Options -Indexes
+RewriteEngine On
+RewriteBase /vitau/backend/
+
+# Forzar HTTPS en producción (descomenta cuando estés en producción)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Pasar headers de Authorization a PHP (necesario en algunos Apache)
+RewriteCond %{HTTP:Authorization} ^(.*)
+RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
+
+# Permitir archivos/directorios existentes
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Rutas limpias hacia módulos
+RewriteRule ^api/psicologia/?$    modules/psicologia/index.php  [QSA,L]
+RewriteRule ^api/alimentacion/?$  modules/alimentacion/index.php [QSA,L]
+RewriteRule ^api/clinico/?$       modules/clinico/index.php      [QSA,L]
+RewriteRule ^api/perfil/?$        modules/perfil/index.php       [QSA,L]
+RewriteRule ^api/ia/chat/?$       ia/chat.php                    [QSA,L]
+RewriteRule ^api/ia/limpiar/?$    ia/limpiar.php                 [QSA,L]
+
+# Bloquear acceso directo a archivos internos
+<FilesMatch "^(database|headers|helpers)\.php$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Bloquear archivos sensibles
+<FilesMatch "\.(env|log|sql|md|gitignore)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Headers de seguridad
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "DENY"
+    Header always set X-XSS-Protection "1; mode=block"
+</IfModule>

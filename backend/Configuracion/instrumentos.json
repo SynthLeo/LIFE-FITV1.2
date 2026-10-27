@@ -1,0 +1,982 @@
+{
+  "_aviso": "Archivo generado por scripts/exportar-instrumentos.mjs a partir de instrumentos.js. No lo edites a mano.",
+  "ejercicio": {
+    "parq_corazon": {
+      "condicional": false,
+      "opciones": {
+        "no": {
+          "pts": 0
+        },
+        "si": {
+          "pts": 1
+        }
+      }
+    },
+    "parq_dolor_pecho": {
+      "condicional": false,
+      "opciones": {
+        "no": {
+          "pts": 0
+        },
+        "si": {
+          "pts": 1
+        }
+      }
+    },
+    "parq_mareo": {
+      "condicional": false,
+      "opciones": {
+        "no": {
+          "pts": 0
+        },
+        "si": {
+          "pts": 1
+        }
+      }
+    },
+    "parq_cronica": {
+      "condicional": false,
+      "opciones": {
+        "no": {
+          "pts": 0
+        },
+        "si": {
+          "pts": 1
+        }
+      }
+    },
+    "parq_medicamento": {
+      "condicional": false,
+      "opciones": {
+        "no": {
+          "pts": 0
+        },
+        "si": {
+          "pts": 1
+        }
+      }
+    },
+    "parq_huesos": {
+      "condicional": false,
+      "opciones": {
+        "no": {
+          "pts": 0
+        },
+        "si": {
+          "pts": 1
+        }
+      }
+    },
+    "parq_supervision": {
+      "condicional": false,
+      "opciones": {
+        "no": {
+          "pts": 0
+        },
+        "si": {
+          "pts": 1
+        }
+      }
+    },
+    "ipaq_vig_dias": {
+      "condicional": false,
+      "opciones": {
+        "0": {
+          "v": 0
+        },
+        "7": {
+          "v": 7
+        },
+        "1_2": {
+          "v": 1
+        },
+        "3_4": {
+          "v": 3
+        },
+        "5_6": {
+          "v": 5
+        }
+      }
+    },
+    "ipaq_vig_min": {
+      "condicional": true,
+      "opciones": {
+        "10_19": {
+          "v": 10
+        },
+        "20_29": {
+          "v": 20
+        },
+        "30_59": {
+          "v": 30
+        },
+        "60_89": {
+          "v": 60
+        },
+        "90_mas": {
+          "v": 90
+        }
+      }
+    },
+    "ipaq_mod_dias": {
+      "condicional": false,
+      "opciones": {
+        "0": {
+          "v": 0
+        },
+        "7": {
+          "v": 7
+        },
+        "1_2": {
+          "v": 1
+        },
+        "3_4": {
+          "v": 3
+        },
+        "5_6": {
+          "v": 5
+        }
+      }
+    },
+    "ipaq_mod_min": {
+      "condicional": true,
+      "opciones": {
+        "10_19": {
+          "v": 10
+        },
+        "20_29": {
+          "v": 20
+        },
+        "30_59": {
+          "v": 30
+        },
+        "60_89": {
+          "v": 60
+        },
+        "90_mas": {
+          "v": 90
+        }
+      }
+    },
+    "ipaq_cam_dias": {
+      "condicional": false,
+      "opciones": {
+        "0": {
+          "v": 0
+        },
+        "7": {
+          "v": 7
+        },
+        "1_2": {
+          "v": 1
+        },
+        "3_4": {
+          "v": 3
+        },
+        "5_6": {
+          "v": 5
+        }
+      }
+    },
+    "ipaq_cam_min": {
+      "condicional": true,
+      "opciones": {
+        "10_19": {
+          "v": 10
+        },
+        "20_29": {
+          "v": 20
+        },
+        "30_59": {
+          "v": 30
+        },
+        "60_89": {
+          "v": 60
+        },
+        "90_mas": {
+          "v": 90
+        }
+      }
+    },
+    "ipaq_sentado": {
+      "condicional": false,
+      "opciones": {
+        "menos_4": {},
+        "4_6": {},
+        "7_9": {},
+        "10_mas": {}
+      }
+    },
+    "lugar_ejercicio": {
+      "condicional": false,
+      "opciones": {
+        "casa": {},
+        "gimnasio": {},
+        "exterior": {},
+        "ninguno": {}
+      }
+    },
+    "equipo": {
+      "condicional": false,
+      "opciones": {
+        "gimnasio_completo": {},
+        "mancuernas": {},
+        "peso_corporal": {},
+        "bandas": {}
+      }
+    },
+    "objetivo_ejercicio": {
+      "condicional": false,
+      "opciones": {
+        "fuerza": {},
+        "masa_muscular": {},
+        "perdida_grasa": {},
+        "resistencia": {}
+      }
+    },
+    "motivacion": {
+      "condicional": false,
+      "opciones": {
+        "salud": {},
+        "estetica": {},
+        "rendimiento": {},
+        "medico": {}
+      }
+    }
+  },
+  "clinico": {
+    "srh_salud": {
+      "condicional": false,
+      "opciones": {
+        "muy_buena": {
+          "pts": 20
+        },
+        "buena": {
+          "pts": 15
+        },
+        "regular": {
+          "pts": 10
+        },
+        "mala": {
+          "pts": 5
+        },
+        "muy_mala": {
+          "pts": 0
+        }
+      }
+    },
+    "tabaco_actual": {
+      "condicional": false,
+      "opciones": {
+        "no": {
+          "pts": 15
+        },
+        "no_diario": {
+          "pts": 5
+        },
+        "diario": {
+          "pts": 0
+        }
+      }
+    },
+    "vapeo_actual": {
+      "condicional": false,
+      "opciones": {
+        "no": {
+          "pts": 10
+        },
+        "ocasional": {
+          "pts": 4
+        },
+        "diario": {
+          "pts": 0
+        }
+      }
+    },
+    "audit_frecuencia": {
+      "condicional": false,
+      "opciones": {
+        "nunca": {
+          "pts": 0
+        },
+        "mensual": {
+          "pts": 1
+        },
+        "2_4_mes": {
+          "pts": 2
+        },
+        "2_3_semana": {
+          "pts": 3
+        },
+        "4_mas_semana": {
+          "pts": 4
+        }
+      }
+    },
+    "audit_cantidad": {
+      "condicional": true,
+      "opciones": {
+        "1_2": {
+          "pts": 0
+        },
+        "3_4": {
+          "pts": 1
+        },
+        "5_6": {
+          "pts": 2
+        },
+        "7_9": {
+          "pts": 3
+        },
+        "10_mas": {
+          "pts": 4
+        }
+      }
+    },
+    "audit_atracon": {
+      "condicional": true,
+      "opciones": {
+        "nunca": {
+          "pts": 0
+        },
+        "menos_mensual": {
+          "pts": 1
+        },
+        "mensual": {
+          "pts": 2
+        },
+        "semanal": {
+          "pts": 3
+        },
+        "diario": {
+          "pts": 4
+        }
+      }
+    },
+    "presion_dx": {
+      "condicional": false,
+      "opciones": {
+        "nunca": {
+          "pts": 4
+        },
+        "normal": {
+          "pts": 8
+        },
+        "alta": {
+          "pts": 0
+        }
+      }
+    },
+    "glucosa_dx": {
+      "condicional": false,
+      "opciones": {
+        "nunca": {
+          "pts": 4
+        },
+        "normal": {
+          "pts": 8
+        },
+        "alta": {
+          "pts": 0
+        }
+      }
+    },
+    "colesterol_dx": {
+      "condicional": false,
+      "opciones": {
+        "nunca": {
+          "pts": 4
+        },
+        "normal": {
+          "pts": 8
+        },
+        "alta": {
+          "pts": 0
+        }
+      }
+    },
+    "antecedente_diabetes": {
+      "condicional": false,
+      "opciones": {
+        "no": {
+          "findrisc": 0
+        },
+        "segundo_grado": {
+          "findrisc": 3
+        },
+        "primer_grado": {
+          "findrisc": 5
+        }
+      }
+    },
+    "sueno_horas": {
+      "condicional": false,
+      "opciones": {
+        "menos_6": {
+          "pts": 0
+        },
+        "6_7": {
+          "pts": 3
+        },
+        "7_8": {
+          "pts": 6
+        },
+        "8_10": {
+          "pts": 8
+        },
+        "mas_10": {
+          "pts": 4
+        }
+      }
+    },
+    "vacunas": {
+      "condicional": false,
+      "opciones": {
+        "completo": {
+          "pts": 8
+        },
+        "incompleto": {
+          "pts": 3
+        },
+        "no_se": {
+          "pts": 3
+        },
+        "no": {
+          "pts": 0
+        }
+      }
+    },
+    "chequeo_ultimo": {
+      "condicional": false,
+      "opciones": {
+        "ultimo_anio": {},
+        "1_2_anios": {},
+        "mas_2": {},
+        "nunca": {}
+      }
+    }
+  },
+  "psicologia": {
+    "phq_interes": {
+      "condicional": false,
+      "opciones": {
+        "0": {
+          "pts": 0
+        },
+        "1": {
+          "pts": 1
+        },
+        "2": {
+          "pts": 2
+        },
+        "3": {
+          "pts": 3
+        }
+      }
+    },
+    "phq_animo": {
+      "condicional": false,
+      "opciones": {
+        "0": {
+          "pts": 0
+        },
+        "1": {
+          "pts": 1
+        },
+        "2": {
+          "pts": 2
+        },
+        "3": {
+          "pts": 3
+        }
+      }
+    },
+    "phq_sueno": {
+      "condicional": false,
+      "opciones": {
+        "0": {
+          "pts": 0
+        },
+        "1": {
+          "pts": 1
+        },
+        "2": {
+          "pts": 2
+        },
+        "3": {
+          "pts": 3
+        }
+      }
+    },
+    "phq_energia": {
+      "condicional": false,
+      "opciones": {
+        "0": {
+          "pts": 0
+        },
+        "1": {
+          "pts": 1
+        },
+        "2": {
+          "pts": 2
+        },
+        "3": {
+          "pts": 3
+        }
+      }
+    },
+    "phq_apetito": {
+      "condicional": false,
+      "opciones": {
+        "0": {
+          "pts": 0
+        },
+        "1": {
+          "pts": 1
+        },
+        "2": {
+          "pts": 2
+        },
+        "3": {
+          "pts": 3
+        }
+      }
+    },
+    "phq_autoestima": {
+      "condicional": false,
+      "opciones": {
+        "0": {
+          "pts": 0
+        },
+        "1": {
+          "pts": 1
+        },
+        "2": {
+          "pts": 2
+        },
+        "3": {
+          "pts": 3
+        }
+      }
+    },
+    "phq_concentracion": {
+      "condicional": false,
+      "opciones": {
+        "0": {
+          "pts": 0
+        },
+        "1": {
+          "pts": 1
+        },
+        "2": {
+          "pts": 2
+        },
+        "3": {
+          "pts": 3
+        }
+      }
+    },
+    "phq_movimiento": {
+      "condicional": false,
+      "opciones": {
+        "0": {
+          "pts": 0
+        },
+        "1": {
+          "pts": 1
+        },
+        "2": {
+          "pts": 2
+        },
+        "3": {
+          "pts": 3
+        }
+      }
+    },
+    "gad_nervios": {
+      "condicional": false,
+      "opciones": {
+        "0": {
+          "pts": 0
+        },
+        "1": {
+          "pts": 1
+        },
+        "2": {
+          "pts": 2
+        },
+        "3": {
+          "pts": 3
+        }
+      }
+    },
+    "gad_control": {
+      "condicional": false,
+      "opciones": {
+        "0": {
+          "pts": 0
+        },
+        "1": {
+          "pts": 1
+        },
+        "2": {
+          "pts": 2
+        },
+        "3": {
+          "pts": 3
+        }
+      }
+    },
+    "gad_preocupacion": {
+      "condicional": false,
+      "opciones": {
+        "0": {
+          "pts": 0
+        },
+        "1": {
+          "pts": 1
+        },
+        "2": {
+          "pts": 2
+        },
+        "3": {
+          "pts": 3
+        }
+      }
+    },
+    "gad_relajarse": {
+      "condicional": false,
+      "opciones": {
+        "0": {
+          "pts": 0
+        },
+        "1": {
+          "pts": 1
+        },
+        "2": {
+          "pts": 2
+        },
+        "3": {
+          "pts": 3
+        }
+      }
+    },
+    "gad_inquietud": {
+      "condicional": false,
+      "opciones": {
+        "0": {
+          "pts": 0
+        },
+        "1": {
+          "pts": 1
+        },
+        "2": {
+          "pts": 2
+        },
+        "3": {
+          "pts": 3
+        }
+      }
+    },
+    "gad_irritable": {
+      "condicional": false,
+      "opciones": {
+        "0": {
+          "pts": 0
+        },
+        "1": {
+          "pts": 1
+        },
+        "2": {
+          "pts": 2
+        },
+        "3": {
+          "pts": 3
+        }
+      }
+    },
+    "gad_miedo": {
+      "condicional": false,
+      "opciones": {
+        "0": {
+          "pts": 0
+        },
+        "1": {
+          "pts": 1
+        },
+        "2": {
+          "pts": 2
+        },
+        "3": {
+          "pts": 3
+        }
+      }
+    },
+    "metas_bienestar": {
+      "condicional": false,
+      "opciones": {
+        "estres": {},
+        "ansiedad": {},
+        "autoestima": {},
+        "relaciones": {}
+      }
+    }
+  },
+  "alimentacion": {
+    "verduras_dias": {
+      "condicional": false,
+      "opciones": {
+        "0_2": {
+          "pts": 0
+        },
+        "3_4": {
+          "pts": 1
+        },
+        "5_6": {
+          "pts": 2
+        },
+        "diario": {
+          "pts": 3
+        }
+      }
+    },
+    "frutas_dias": {
+      "condicional": false,
+      "opciones": {
+        "0_2": {
+          "pts": 0
+        },
+        "3_4": {
+          "pts": 1
+        },
+        "5_6": {
+          "pts": 2
+        },
+        "diario": {
+          "pts": 3
+        }
+      }
+    },
+    "lacteos_dias": {
+      "condicional": false,
+      "opciones": {
+        "0_2": {
+          "pts": 0
+        },
+        "3_4": {
+          "pts": 1
+        },
+        "5_6": {
+          "pts": 2
+        },
+        "diario": {
+          "pts": 3
+        }
+      }
+    },
+    "agua_vasos": {
+      "condicional": false,
+      "opciones": {
+        "0_2": {
+          "pts": 0
+        },
+        "3_4": {
+          "pts": 1
+        },
+        "5_6": {
+          "pts": 2
+        },
+        "7_mas": {
+          "pts": 3
+        }
+      }
+    },
+    "carnes_procesadas": {
+      "condicional": false,
+      "opciones": {
+        "5_mas": {
+          "pts": 0
+        },
+        "3_4": {
+          "pts": 1
+        },
+        "1_2": {
+          "pts": 2
+        },
+        "ninguno": {
+          "pts": 3
+        }
+      }
+    },
+    "comida_rapida": {
+      "condicional": false,
+      "opciones": {
+        "5_mas": {
+          "pts": 0
+        },
+        "3_4": {
+          "pts": 1
+        },
+        "1_2": {
+          "pts": 2
+        },
+        "ninguno": {
+          "pts": 3
+        }
+      }
+    },
+    "dulces": {
+      "condicional": false,
+      "opciones": {
+        "5_mas": {
+          "pts": 0
+        },
+        "3_4": {
+          "pts": 1
+        },
+        "1_2": {
+          "pts": 2
+        },
+        "ninguno": {
+          "pts": 3
+        }
+      }
+    },
+    "pan_dulce": {
+      "condicional": false,
+      "opciones": {
+        "5_mas": {
+          "pts": 0
+        },
+        "3_4": {
+          "pts": 1
+        },
+        "1_2": {
+          "pts": 2
+        },
+        "ninguno": {
+          "pts": 3
+        }
+      }
+    },
+    "botanas": {
+      "condicional": false,
+      "opciones": {
+        "5_mas": {
+          "pts": 0
+        },
+        "3_4": {
+          "pts": 1
+        },
+        "1_2": {
+          "pts": 2
+        },
+        "ninguno": {
+          "pts": 3
+        }
+      }
+    },
+    "refrescos_dias": {
+      "condicional": false,
+      "opciones": {
+        "5_mas": {
+          "pts": 0
+        },
+        "3_4": {
+          "pts": 1
+        },
+        "1_2": {
+          "pts": 2
+        },
+        "ninguno": {
+          "pts": 3
+        }
+      }
+    },
+    "refrescos_vasos": {
+      "condicional": true,
+      "opciones": {
+        "1": {
+          "pts": 2
+        },
+        "4_mas": {
+          "pts": 0
+        },
+        "2_3": {
+          "pts": 1
+        }
+      }
+    },
+    "desayuno_dias": {
+      "condicional": false,
+      "opciones": {
+        "0_1": {
+          "pts": 0
+        },
+        "2_3": {
+          "pts": 1
+        },
+        "4_5": {
+          "pts": 2
+        },
+        "6_7": {
+          "pts": 3
+        }
+      }
+    },
+    "objetivo": {
+      "condicional": false,
+      "opciones": {
+        "perder_peso": {},
+        "ganar_masa": {},
+        "mantener": {},
+        "mejorar_salud": {}
+      }
+    },
+    "proteina": {
+      "condicional": false,
+      "opciones": {
+        "carnes": {},
+        "pescado": {},
+        "huevo_lacto": {},
+        "vegetal": {}
+      }
+    },
+    "alergias": {
+      "condicional": false,
+      "opciones": {
+        "ninguna": {},
+        "lactosa": {},
+        "gluten": {},
+        "otras": {}
+      }
+    },
+    "presupuesto": {
+      "condicional": false,
+      "opciones": {
+        "muy_limitado": {},
+        "limitado": {},
+        "moderado": {},
+        "amplio": {}
+      }
+    },
+    "cocina": {
+      "condicional": false,
+      "opciones": {
+        "completa": {},
+        "limitada": {},
+        "cafeteria": {},
+        "no": {}
+      }
+    },
+    "actividad_fisica_alim": {
+      "condicional": false,
+      "opciones": {
+        "sedentario": {},
+        "leve": {},
+        "moderado": {},
+        "intenso": {}
+      }
+    }
+  }
+}

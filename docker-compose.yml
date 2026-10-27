@@ -1,0 +1,68 @@
+# LIFE FIT con Docker: base de datos + backend PHP + frontend, con un solo comando.
+#   1. Pon el respaldo de tu base en docker/db/00_fitness.sql (en UTF-8).
+#   2. docker compose up --build
+#   3. Abre http://localhost:5173
+# LM Studio sigue corriendo en tu compu (fuera de Docker), en el puerto 1234.
+
+services:
+  db:
+    image: mariadb:10.11
+    environment:
+      MARIADB_DATABASE: fitness
+      MARIADB_USER: lifefit
+      MARIADB_PASSWORD: lifefit
+      MARIADB_ROOT_PASSWORD: root
+    volumes:
+      - db_data:/var/lib/mysql
+      # Solo corren la primera vez (con la base vacía), en orden alfabético
+      - ./docker/db/00_fitness.sql:/docker-entrypoint-initdb.d/00_fitness.sql:ro
+      - ./backend/migraciones/001_cuestionarios_validados.sql:/docker-entrypoint-initdb.d/10_001.sql:ro
+      - ./backend/migraciones/002_seguimiento_animo.sql:/docker-entrypoint-initdb.d/11_002.sql:ro
+      - ./backend/migraciones/003_login_intentos.sql:/docker-entrypoint-initdb.d/12_003.sql:ro
+      - ./backend/migraciones/004_privacidad_ranking.sql:/docker-entrypoint-initdb.d/13_004.sql:ro
+    ports:
+      - "3308:3306"   # para entrar con phpMyAdmin/Workbench desde tu compu
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      retries: 20
+
+  backend:
+    build:
+      context: .
+      dockerfile: docker/backend.Dockerfile
+    environment:
+      DB_HOST: db
+      DB_PORT: "3306"
+      DB_NAME: fitness
+      DB_USER: lifefit
+      DB_PASS: lifefit
+      JWT_SECRET: cambia-esto-por-una-cadena-larga-y-aleatoria-de-32-o-mas
+      LLM_URL: http://host.docker.internal:1234/v1
+      LLM_MODEL: qwen/qwen3-4b-2507
+    extra_hosts:
+      - "host.docker.internal:host-gateway"   # para llegar a LM Studio en tu compu (Linux)
+    volumes:
+      - ./backend:/var/www/html/backend
+      - ./docker/local.php:/var/www/html/backend/Configuracion/local.php:ro
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    image: node:22-alpine
+    working_dir: /app
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0 --port 5173"
+    environment:
+      BACKEND_URL: http://backend
+    volumes:
+      - ./frontend:/app
+      - frontend_modules:/app/node_modules
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+
+volumes:
+  db_data:
+  frontend_modules:

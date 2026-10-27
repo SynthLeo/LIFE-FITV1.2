@@ -1,0 +1,8 @@
+Pon aquí el respaldo de tu base con el nombre 00_fitness.sql
+
+  mysqldump -u LEO -p -P 3307 fitness > 00_fitness.sql
+
+Si lo sacaste con PowerShell, guárdalo en UTF-8 (PowerShell usa UTF-16 por defecto):
+  mysqldump -u LEO -p -P 3307 fitness --result-file=00_fitness.sql
+
+Solo se carga la primera vez. Para volver a cargarlo: docker compose down -v
